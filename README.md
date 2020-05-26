@@ -3,9 +3,11 @@
  - Title: Door Dec Creator
  - Last Updated: 11 January 2020
  
+ ![](DoorDec.gif)
+ 
 #### Program Description: 
 
-To create this project, I used the windows form framework provided on visual studio. As an RA for SDSM&T, one challenged I was faced was creating door decs for my residents. While making these door decs, it easily became a tideous, repetative process. To tackle this, I developed this to make my door decs faster.
+To create this project, I used the windows forms framework provided on visual studio. As an RA for SDSM&T, one challenged I was faced was creating door decs for my residents. While making these door decs, it easily became a tideous, repetative process. To tackle this, I developed this to make my door decs faster.
 
 This program has two modes, single door dec creator and multiple door dec creator. Both modes allow the user to control the dimensions and various other image and font options (boarder thickness, font size, font type, etc...).
 
