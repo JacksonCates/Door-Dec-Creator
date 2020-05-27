@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 using _Excel = Microsoft.Office.Interop.Excel;
 
+/* Class Name: Excel
+ * Author: Jackson Cates
+ * 
+ * Description:
+ * This class simply allows the user to read in cells from an excel sheet.
+ * 
+ */ 
+
 namespace DoorDecCreator
 {
     class Excel
@@ -17,9 +25,16 @@ namespace DoorDecCreator
 
         public Excel(string path, int Sheet)
         {
+            // Sets the path, workbook, and worksheet
             this.path = path;
             wb = excel.Workbooks.Open(path);
             ws = wb.Worksheets[Sheet];
+        }
+
+        ~Excel()
+        {
+            // Closes
+            wb.Close();
         }
 
         public string ReadCell(int i, int j)
@@ -31,6 +46,7 @@ namespace DoorDecCreator
             }
             else
             {
+                // Is empty, treat as empty string
                 return "";
             }
         }

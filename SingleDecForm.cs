@@ -8,6 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Title: SingleDecForm
+ * 
+ * Description:
+ * This form allows the user to create the single door decs. The user chooses a photo and enters all the rest of the information as needed.
+ * Once the user saves the door dec it will save it in the folder chosen.
+ * 
+ */
+
 namespace DoorDecCreator
 {
     public partial class SingleDecForm : Form
@@ -78,7 +86,7 @@ namespace DoorDecCreator
                 // Finds the picture
                 pic = Image.FromFile(ofd.FileName);
 
-                // Intalizes the size
+                // Initializes the size
                 if (pic.Width > pic.Height)
                 {
                     TotalWidthTextBox.Text = "4";
@@ -97,7 +105,15 @@ namespace DoorDecCreator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image.Save("FileSystem\\Finished\\" + nameBox.Text + ".jpg");
+            // Allows the user to choose a folder.
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Saves
+                string path = folderBrowserDialog.SelectedPath;
+                pictureBox1.Image.Save(path + ".jpg");
+            }
+            
         }
 
         // Update button

@@ -9,6 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+/* Title: MultipleDecForm
+ * 
+ * Description:
+ * This form allows the user to create the multiple door decs. It takes in the names via a spreadsheet, and the images via a folder.
+ * Once all the options are selected, the user can then press the create decs button and the program will error check, then create all of the decs.
+ * 
+ */ 
+
 namespace DoorDecCreator
 {
     public partial class MultipleDecForm : Form
@@ -59,7 +67,7 @@ namespace DoorDecCreator
                 // Creates the new excel sheet
                 roster = new Excel(ofd.FileName, 1);
 
-                // Update the lsit box with the residents name
+                // Update the list box with the residents name
                 // Read the excel sheet
                 // Finds the col and rows
                 int firstCol = Convert.ToInt16(Convert.ToChar(FirstColTextBox.Text) - 'A');
@@ -251,15 +259,15 @@ namespace DoorDecCreator
                     // Prompts the user we are creating the door decs
                     MessageBox.Show("Creating decs...");
 
-                    // Creats a door dec for each residnet
+                    // Creates a door dec for each resident
                     int width;
                     int height;
                     for (int i = 0; i < names.Count(); ++i)
                     {
-                        // Getes a picture
+                        // Gets a picture
                         Image pic = Image.FromFile(paths[i]);
 
-                        // Intalizes the size
+                        // Initializes the size
                         // Landscape
                         if (pic.Width > pic.Height)
                         {

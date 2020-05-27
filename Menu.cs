@@ -8,6 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Title: Menu
+ * 
+ * Description:
+ * This form is the main menu and allows the user pick between the two different modes.
+ * 
+ */ 
+
 namespace DoorDecCreator
 {
     public partial class Menu : Form
@@ -23,7 +30,7 @@ namespace DoorDecCreator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Open the singl form and closes the previous one
+            // Open the single form and closes the previous one
             this.Hide(); // Hides the current form
             SingleDecForm f2 = new SingleDecForm();
             f2.Closed += (s, args) => this.Close();
@@ -32,7 +39,7 @@ namespace DoorDecCreator
 
         private void MultiDoorDecButton_Click(object sender, EventArgs e)
         {
-            // Open the singl form and closes the previous one
+            // Open the single form and closes the previous one
             this.Hide(); // Hides the current form
             MultipleDecForm f2 = new MultipleDecForm();
             f2.Closed += (s, args) => this.Close();
