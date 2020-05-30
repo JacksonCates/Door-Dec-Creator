@@ -19,4 +19,5 @@ Where they differ is how they process names and images. While single mode allows
  * Windows forms
  * File manipulation/management
  * Image creation and processing
+ * Events
  * Git source control
